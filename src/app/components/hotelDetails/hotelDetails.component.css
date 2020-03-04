@@ -1,0 +1,87 @@
+
+.example-radio-group {
+    display: flex;
+    flex-direction: column;
+    
+    margin: 15px 0;
+    width: 100%;
+  }
+  
+  .example-radio-button {
+    margin: 10px;
+  
+  }
+  .details{
+    display: flex;
+   
+  }
+  mat-card-content{
+    width: 100%;
+  }
+
+  .radioButtonHabitaciones{
+    min-width: 20rem;
+    width: 25%;
+    display: flex;
+    margin: auto;
+  
+    margin-right: 2rem;
+    margin-top: 1rem;
+    -webkit-box-shadow: 18px -12px 49px -7px rgba(0,0,0,0.75);
+    -moz-box-shadow: 18px -12px 49px -7px rgba(0,0,0,0.75);
+    box-shadow: 18px -12px 49px -7px rgba(0,0,0,0.75);
+  }
+
+  .radioButtonservicios{
+    width: 25%;
+    display: flex;
+    margin: auto;
+    margin-left: 2rem;
+    margin-top: 1rem;
+    -webkit-box-shadow: 18px -12px 49px -7px rgba(0,0,0,0.75);
+    -moz-box-shadow: 18px -12px 49px -7px rgba(0,0,0,0.75);
+    box-shadow: 18px -12px 49px -7px rgba(0,0,0,0.75);
+  }
+
+  
+
+  .example-h2 {
+    margin: 10px;
+  }
+  
+  .example-section {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    height: 40px;
+    width: 100%;
+  }
+  
+  .example-margin {
+    margin: 0 10px;
+  }
+h3{
+  text-align: center;
+}
+
+
+.labelService{
+  width: 100%;
+  text-align: right;
+}
+
+.labelRoom{
+  width: 100%;
+  text-align: right;
+}
+
+.totalPrice{
+  margin: auto;
+  margin-top: 2rem;
+  display: flex;
+  -webkit-box-shadow: 18px -12px 49px -7px rgba(0,0,0,0.75);
+  -moz-box-shadow: 18px -12px 49px -7px rgba(0,0,0,0.75);
+  box-shadow: 18px -12px 49px -7px rgba(0,0,0,0.75);
+  width: 25%;
+  min-width: 20rem;
+}

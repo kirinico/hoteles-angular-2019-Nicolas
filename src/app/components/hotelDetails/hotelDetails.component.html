@@ -1,0 +1,68 @@
+<app-hotelRegistered [hotel]="hotel"></app-hotelRegistered>
+
+<div class="details">
+    <mat-card class=radioButtonHabitaciones>
+        <mat-card-content>
+            <h3>Habitaciones</h3>
+
+            <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group" ng-required="true ">
+                <mat-radio-button class="example-radio-button" *ngFor="let room of rooms" [value]="room.price" (change)= "totalAmount($event)" >
+                    {{room.type}}
+
+                    <label class="labelRoom" for="">{{room.price}}</label>  
+                    
+                    
+                </mat-radio-button>
+           
+            </mat-radio-group>
+
+
+        </mat-card-content>
+
+    </mat-card>
+    <mat-card class=radioButtonservicios>
+        <mat-card-content>
+            <h3>Servicios Adicionales</h3>
+            <section class="example-section" *ngFor="let service of additionalServices">
+                <mat-checkbox class="example-margin"  #option (change)= "totalServices(service, option.checked)" color="warn">{{service.name}} </mat-checkbox>
+                <div class="labelService">
+                    <label for="">${{service.price}}</label>
+                </div>
+            </section>
+
+        </mat-card-content>
+
+    </mat-card>
+</div>
+
+<div class="totalPrice">
+    <mat-card>
+        
+        <mat-card-content>
+            <div>
+
+                <mat-form-field appearance="outline">
+                        <mat-label>Fecha desde</mat-label>
+                    <input matInput [min]="min"  [matDatepicker]="pickerFrom" placeholder="Desde"[readonly]="true"[(ngModel)]="dateFrom" (ngModelChange)="datepickerDesde($event)" >
+                    <mat-datepicker-toggle matSuffix [for]="pickerFrom"></mat-datepicker-toggle>
+                    <mat-datepicker #pickerFrom ></mat-datepicker>
+                  </mat-form-field>
+
+                  <mat-form-field appearance="outline" *ngIf="dateFrom">
+                        <mat-label>Fecha Hasta</mat-label>
+                    <input matInput [matDatepicker]="pickerTo" placeholder="Hasta" [readonly]="true" [(ngModel)]="dateTo" [min]="minDate" (ngModelChange)="datepickerHasta($event)">
+                    <mat-datepicker-toggle matSuffix [for]="pickerTo"></mat-datepicker-toggle>
+                    <mat-datepicker #pickerTo></mat-datepicker>
+                  </mat-form-field>
+            </div>
+
+             <div *ngIf= "dateDisabled()">
+                <h2>${{hotel.totalSpend}}</h2>
+
+                <button mat-raised-button color="primary"(click)="save()">Reservar</button>
+            </div>
+            
+        </mat-card-content>
+
+    </mat-card>
+</div>

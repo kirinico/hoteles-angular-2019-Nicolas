@@ -1,0 +1,46 @@
+<mat-card class="cardHotel" (click)="navigateToHotelDetails(hotel.id)">
+  <mat-card-content class="contenthotel">
+    <div class="crop">
+      <img src="{{hotel.photoUrl}}" class="imgHotel" height="150rem">
+    </div>
+  </mat-card-content>
+  
+  <div class="titleHotel">
+    <h2>{{hotel.name}}</h2>
+
+
+    <ngb-rating [(rate)]="hotel.stars" max=5 [readonly]="true">
+      <ng-template let-fill="fill" let-index="index">
+        <span class="star" [class.filled]="fill === 100" [class.bad]="index < 3">&#9733;</span>
+      </ng-template>
+    </ngb-rating>
+    <hr>
+
+    <p>
+      <mat-icon>room</mat-icon>
+      {{hotel.adress}}
+    </p>
+    <div *ngIf="itIsReserved()">
+        <button mat-raised-button color="warn" (click)= "deleteReserved()">Cancelar</button>
+    </div>
+  </div>
+  <div *ngIf="itIsReserved()" class="price">
+    <div class="reserved">
+      <label >{{user.datefrom.toLocaleDateString("es-ES")}}</label>
+      <label class="labelReserverd">-{{user.dateTo.toLocaleDateString("es-ES")}}</label>
+    </div>
+    <div class="labelReserverd">
+      <label>{{reserveDay}}</label>
+      <h2>${{hotel.totalSpend}}</h2>
+
+    </div>
+  </div>
+
+
+  <div *ngIf="!itIsReserved()" class="price">
+    <h2>${{price}}</h2>
+
+  </div>
+  
+  
+</mat-card>

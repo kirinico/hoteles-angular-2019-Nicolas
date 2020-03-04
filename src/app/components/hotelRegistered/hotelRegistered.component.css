@@ -1,0 +1,45 @@
+
+mat-card  {
+    max-width: 40rem;
+    display: flex;
+    margin: auto;
+    margin-top: 1rem;
+    
+  }
+
+.cardHotel{
+  -webkit-box-shadow: 18px -12px 49px -7px rgba(0,0,0,0.75);
+  -moz-box-shadow: 18px -12px 49px -7px rgba(0,0,0,0.75);
+  box-shadow: 18px -12px 49px -7px rgba(0,0,0,0.75);
+  cursor:pointer;
+}
+.img, .imgHotel{
+  width: 80%;
+  margin: 1rem;
+}
+.crop {
+  width: 200px;
+  height: 150px;
+  overflow: hidden;
+}
+
+.titleHotel{
+  flex-direction: column;
+  margin-top: -1rem;
+}
+
+.price{
+  margin-left: 5rem;
+  margin-top: -1rem;
+  flex-direction: column;
+}
+
+.reserved{
+  display: flex;
+  flex-direction: row;
+}
+
+.labelReserverd{
+  text-align: center;
+}
+

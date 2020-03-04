@@ -1,0 +1,8 @@
+<div class="listHotel" *ngFor="let hotelList of hotels">
+  <div *ngIf="sameHotel(hotelList)">
+
+    <app-hotelRegistered [hotel]="hotelList"></app-hotelRegistered>
+  </div>
+
+
+</div>

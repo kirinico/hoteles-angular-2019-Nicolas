@@ -1,0 +1,29 @@
+<mat-toolbar color="primary" class="toobar">
+
+
+  <mat-toolbar-row>
+      <a mat-button routerLink="hotelRegistrado">
+    <mat-icon class="iconHotel">hotel</mat-icon>
+    </a>
+    <span>HE!</span>
+    
+    <div class="menu">
+        <label>{{user.name}}</label>
+
+        <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+          <mat-icon>arrow_drop_down</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item (click)="navegationReservedHotels()">
+            <mat-icon>local_hotel</mat-icon>
+            <span>Hoteles Reservados</span>
+          </button>
+          
+        </mat-menu>
+      </div>
+    
+  </mat-toolbar-row>
+
+</mat-toolbar>
+
+<router-outlet></router-outlet>
